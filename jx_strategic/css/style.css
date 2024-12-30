@@ -1,0 +1,279 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #191919;
+    color: #fffff7;
+    line-height: 1.6;
+  }
+  p {
+    text-align: center;
+  
+  }
+  .header-1{
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 3.5rem;
+  }
+
+
+  .paragraph-1{
+    margin: auto;
+    margin-top: 10px;
+    padding: 5px;
+    max-width: 700px;
+    font-family: Arial, sans-serif;
+    font-size: 1.4rem;
+  }  
+
+  .container {
+    width: 100%;
+    max-width: 1200px;  /* Define max-width for header */
+    text-align: center;  /* This will center the content horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 100px;
+  }
+
+  /* Header Styles */
+  header {
+    background-color: #1d1d1d;
+    color: #fffff7;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+  }
+  .spacer {
+    display: none
+  }
+  
+  @media screen and (min-width: 700px) {
+    header {
+      display: flex;
+    }
+    .logo,
+    .spacer {
+      display: block;
+      width: 278px;
+      flex: 0 0 auto;
+    }
+    .heading {
+      flex: 1 1 auto;
+    }
+  }
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  
+  .company-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .logo {
+    height: 40px;
+    width: auto;
+    animation: fadeWave 7s ;  /* Apply the animation */
+    
+  }
+ /* Keyframes for smooth flashing effect */
+@keyframes smoothFlash {
+  0% {
+      opacity: 1; /* Fully visible */
+  }
+  50% {
+      opacity: 0; /* Fully transparent */
+  }
+  100% {
+      opacity: 1; /* Fully visible again */
+  }
+}
+
+/* Apply smooth flashing to the logo */
+.logo {
+  height: 45px;
+  width: auto;
+  animation: smoothFlash 1.5s infinite; /* Adjust duration as needed */
+}
+
+
+  /* Center the Newsletter Heading */
+  .newsletter-heading {
+    text-align: center;
+    margin: 40px 0; /* Adds space above and below the heading */
+  }
+  
+  .newsletter-heading h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+/* Newsletter Compact Styles */
+.newsletter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.newsletter input[type="email"] {
+  flex: 1;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-right: none; /* No border on the right side */
+  border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+  outline: none;
+}
+
+.newsletter button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0 5px 5px 0; /* Rounded corners on the right */
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: #555;
+}
+
+.newsletter input[type="email"]:focus {
+  border-color: #777;
+}
+
+.newsletter button:active {
+  background-color: #444;
+}
+
+  
+  /* Footer Styles */
+  footer {
+    background-color: #1d1d1d;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+  
+  :root {
+    /* Define global custom properties */
+    --tds-animate-backdrop-transition: opacity 0.5s ease, visibility 0s 0.5s;
+    --tds-animate-backdrop-opacity: 0;
+    --tds-animate-backdrop-visibility: hidden;
+    --tds-animate-backdrop-top: 11px;
+    --tds-animate-backdrop-left: 0;
+    --tds-animate-backdrop-height: 32px;
+    --tds-animate-backdrop-width: 79px;
+  }
+  
+  .custom-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #333333;
+    color: #ffffff;
+  }
+  
+  .custom-header .custom-menu-button {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #555555;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--tds-animate-backdrop-transition);
+  }
+  
+  .custom-header .custom-menu-button:hover {
+    background-color: #666666;
+    opacity: 0.9; /* Adjusted using the custom property */
+  }
+  
+  .custom-header .custom-menu-button::before {
+    content: "";
+    position: absolute;
+    top: var(--tds-animate-backdrop-top);
+    left: var(--tds-animate-backdrop-left);
+    height: var(--tds-animate-backdrop-height);
+    width: var(--tds-animate-backdrop-width);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    opacity: var(--tds-animate-backdrop-opacity);
+    visibility: var(--tds-animate-backdrop-visibility);
+    z-index: -1;
+    transition: var(--tds-animate-backdrop-transition);
+  }
+  
+  .custom-header .custom-menu-button:hover::before {
+    opacity: 1; /* Makes the backdrop visible on hover */
+    visibility: visible;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    margin-top: 10px;  /* Adjust depending on your layout */
+}
+
+/* Text Button Styling */
+.text-button {
+  text-decoration: none; /* Remove underline by default */
+  color: #fffff7; /* Default text color */
+  background: none; /* No background */
+  border: none; /* Remove borders */
+  font-size: 1.5rem; /* Adjust text size as needed */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  font-weight: bold
+}
+
+/* Hover Effect: Highlight and Underline */
+.text-button:hover {
+  color: #ffffff; /* Darker text color */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Hover Effect with Background and Border */
+.text-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;  /* Make sure the background appears behind the text */
+}
+
+.text-button:hover::before {
+  opacity: 0.2;
+}
